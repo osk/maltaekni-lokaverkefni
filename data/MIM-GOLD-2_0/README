@@ -1,0 +1,49 @@
+MIM-GOLD-NER 2.0
+
+
+MIM-GOLD-NER 2.0 er nafnamerkt málheild byggð á Gullstaðli MÍM, MIM-GOLD, útgáfu 21.05 (https://repository.clarin.is/repository/xmlui/handle/20.500.12537/113). Ríflega 48 þúsund sérnöfn og aðrar nafneiningar hafa verið merktar í þessari milljón tóka málheild.
+ 
+Eftirfarandi nafneiningar eru merktar í málheildinni:
+
+PERSON (mannanöfn) - nöfn á fólki, dýrum og öðrum verum, raunverulegum eða tilbúnum.
+LOCATION (staðir) - heiti á stöðum, bæði raunveruleg og tilbúin, s.s. byggingar, götuheiti og staðaheiti. Hvers kyns landfræðilegar og stjórnskipulegar einingar á borð við borgir, lönd, sýslur og önnur svæði, sem og plánetur og önnur fyrirbæri í geimnum.
+ORGANIZATION (fyrirtæki og stofnanir) - fyrirtæki og aðrar stofnanir, raunveruleg eða tilbúin. Skólar, kirkjur, sundlaugar, félagsheimili, hljómsveitir, önnur félög.
+MISCELLANEOUS (ýmislegt) - sérnöfn sem ekki eiga heima í framangreindu flokkunum þremur, svo sem vöruheiti, bókatitlar og kvikmyndir, viðburðir á borð við stríð, íþróttamót, hátíðir, tónleika o.s.frv.
+DATE (dagsetningar) - nákvæmar tímaeiningar sem ná yfir að minnsta kosti heilan dag, svo sem dagar, mánuðir eða aldir, ritað með tölustöfum eða bókstöfum.
+TIME (tímasetningar) - nákvæmar tímaeiningar sem eru minna en einn dagur, svo sem sekúndur, mínútur og klukkustundir, ritað með tölustöfum eða bókstöfum.
+MONEY (upphæðir) - nákvæmar upphæðir í hvaða gjaldmiðli sem er, ritaðar með tölustöfum eða bókstöfum.
+PERCENT (prósentutölur) - prósentutölur, ritaðar með tölustöfum eða bókstöfum.
+
+Málheildin er á CoNLL-sniðinu, og staðsetning hvers tóka innan nafneiningarinnar er merkt með BIO-sniðinu.
+
+Nafnakennslamálheildin er sett fram með sama sérstaka notkunarleyfi og MIM-GOLD, sem er byggt á leyfi MIM-málheildarinnar, þar sem textarnir í MIM-GOLD eru fengnir úr henni.
+
+Málheildinni er lýst í eftirfarandi grein: https://link.springer.com/chapter/10.1007/978-3-030-59430-5_4
+(texti: https://en.ru.is/kennarar/hrafn/papers/Named_entity_recognition_SLSP.pdf)
+
+---------------- 
+ENGLISH
+
+MIM-GOLD-NER 2.0 is an Icelandic named entity corpus, based on the MIM-GOLD corpus, version 21.05 (https://repository.clarin.is/repository/xmlui/handle/20.500.12537/113).
+Over 48 thousand named entities are tagged in this corpus of one million tokens.
+
+The corpus is tagged for the following classes of named entities:
+
+PERSON – names of humans, animals and other beings, real or fictional.
+LOCATION – names of locations, real or fictional, i.e. buildings, street and place names, both real and fictional. All geographical and geopolitical entities such as cities, countries, counties and regions, as well as planet names and other outer space entities.
+ORGANIZATION – companies and other organizations, public or private, real or fictional. Schools, churches, swimming pools, community centers, musical groups, other affiliations.
+MISCELLANEOUS – proper nouns that don’t belong to the previous three categories, such as products, books and movie titles, events, such as wars, sports tournaments, festivals, concerts, etc.
+DATE – absolute temporal units of a full day or longer, such as days, months, years, centuries, both written numerically and alphabetically.
+TIME – absolute temporal units shorter than a full day, such as seconds, minutes, or hours, both written numerically and alphabetically.
+MONEY – exact monetary amounts in any currency, both written numerically and alphabetically.
+PERCENT – percentages, both written numerically and alphabetically
+
+The corpus is in the CoNLL format, and the position of each token within the NE is marked using the BIO tagging format. 
+
+The Named Entity Corpus is distributed with the same special user license as MIM-GOLD, which is based on the MIM license, since the texts in MIM-GOLD were sampled from the MIM corpus.
+
+The corpus is described in the following paper: https://link.springer.com/chapter/10.1007/978-3-030-59430-5_4
+(text: https://en.ru.is/kennarar/hrafn/papers/Named_entity_recognition_SLSP.pdf)
+
+
+

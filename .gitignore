@@ -1,0 +1,7 @@
+scratchpad/
+__pycache__
+models/
+.python-version
+data/output/
+.DS_Store
+.coverage

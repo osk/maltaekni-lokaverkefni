@@ -1,0 +1,155 @@
+[
+  {
+    "index": "2470",
+    "name": "Walter Gilbert",
+    "sentence": "Árið 1980 deildi hann verðlaununum með [START] Walter Gilbert [END] ( f. 1932 ) og Paul Berg ( f. 1926 ) .",
+    "prediction": [
+      {
+        "text": {
+          "value": "ウォルター・ギルバート",
+          "lang": "ja"
+        },
+        "score": -0.6062
+      },
+      {
+        "text": {
+          "value": "والتر غيلبرت",
+          "lang": "ar"
+        },
+        "score": -0.8307
+      },
+      {
+        "text": {
+          "value": "والتر غيلبرت (لاعب كرة قدم أمريكية)",
+          "lang": "ar"
+        },
+        "score": -1.114
+      },
+      {
+        "text": {
+          "value": "Walter Gilbert",
+          "lang": "en"
+        },
+        "score": -1.5986
+      },
+      {
+        "text": {
+          "value": "Walter Gilbert",
+          "lang": "sv"
+        },
+        "score": -1.7389
+      }
+    ],
+    "sentence_id": 4196,
+    "section": "scienceweb",
+    "correct_wiki": "ウォルター・ギルバート >> ja",
+    "wiki_is": [],
+    "wiki_en": [
+      "Walter Gilbert",
+      "Walter Gilbert (cricketer)",
+      "Walter Gilbert (sculptor)",
+      "Walter Gilbert (American football)",
+      "Walter Gilbert (pilot)",
+      "Walter Gilbert Dinsdale",
+      "Walter Gilbert Alexander",
+      "Walter Gilbert Fuller",
+      "Walter Gilbert (baronet)",
+      "Walter Gilbert (disambiguation)"
+    ],
+    "suggestion_wiki": "",
+    "unlabelled": false,
+    "matches": [
+      {
+        "label": "Person",
+        "entity": "Walter Gilbert",
+        "lines": [
+          85582,
+          85583
+        ],
+        "category": "scienceweb",
+        "base_info": [
+          "Walter\tWalter\tn----s",
+          "Gilbert\tGilbert\tn----s"
+        ]
+      }
+    ]
+  },
+  {
+    "index": "2471",
+    "name": "Paul Berg",
+    "sentence": "Árið 1980 deildi hann verðlaununum með Walter Gilbert ( f. 1932 ) og [START] Paul Berg [END] ( f. 1926 ) .",
+    "prediction": [
+      {
+        "text": {
+          "value": "باول بيرغ",
+          "lang": "ar"
+        },
+        "score": -1.4442
+      },
+      {
+        "text": {
+          "value": "Paul Berg",
+          "lang": "en"
+        },
+        "score": -1.9699
+      },
+      {
+        "text": {
+          "value": "Paul Berg",
+          "lang": "tr"
+        },
+        "score": -2.0278
+      },
+      {
+        "text": {
+          "value": "Paul Berg (snowboardzista)",
+          "lang": "pl"
+        },
+        "score": -2.2521
+      },
+      {
+        "text": {
+          "value": "Paul Berg (kemiisto)",
+          "lang": "eo"
+        },
+        "score": -2.3962
+      }
+    ],
+    "sentence_id": 4196,
+    "section": "scienceweb",
+    "correct_wiki": "باول بيرغ >> ar",
+    "wiki_is": [
+      "Paul Bernardo og Karla Homolka",
+      "Páll Bergþórsson"
+    ],
+    "wiki_en": [
+      "Paul Berg",
+      "Paul Bergrin",
+      "Paul Berger",
+      "Paul Berg (photographer)",
+      "Paul Bergon",
+      "Paul Bergne",
+      "Paul Bergmans",
+      "Paul Bergmann",
+      "Paul Berg (snowboarder)",
+      "Paul Berger (sculptor)"
+    ],
+    "suggestion_wiki": "",
+    "unlabelled": false,
+    "matches": [
+      {
+        "label": "Person",
+        "entity": "Paul Berg",
+        "lines": [
+          85589,
+          85590
+        ],
+        "category": "scienceweb",
+        "base_info": [
+          "Paul\tPaul\tn----s",
+          "Berg\tBerg\tn----s"
+        ]
+      }
+    ]
+  }
+]

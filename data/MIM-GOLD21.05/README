@@ -1,0 +1,36 @@
+MIM-GOLD 21.05
+
+Gullstaðallinn útg. 21.05
+
+Í möppunni data eru 13 skrár með mörkuðum og lemmuðum textum sem voru valdir með úrtaki úr 13 textaflokkum úr 25 milljón orða Markaðri íslenskri málheild (MIM, http://malfong.is/?pg=mim). 
+Textarnir voru hreinsaðir og síðan markaðir með sjálfvirkum aðferðum og síðan var mörkun leiðrétt með hálfsjálfvirkum og handvirkum aðferðum. Um markamengið sem liggur til grundvallar má lesa um í MIM_GOLD_DESCRIPTION_IS.pdf. 
+
+Útg. 21.05 inniheldur sömu texta og MIM-GOLD 20.05 en lemmum hefur verið bætt við, auk þess sem einhver mörk voru leiðrétt. Textarnir voru upphaflega lemmaðir með lemmaldinu Nefni en lemmur voru í framhaldi leiðréttar handvirkt. 
+
+Skjalið mim.plain inniheldur gullið í heild sinni sem nota má ef þjálfa á markara eða lemmald.
+
+Þegar birtar eru niðurstöður sem eru fengnar með því að nota gögn Gullstaðalins vinsamlegast vitnið í: 
+
+Hrafn Loftsson, Jökull H. Yngvason, Sigrún Helgadóttir og Eiríkur Rögnvaldsson. 2010. Developing a PoS-tagged corpus using existing tools.. Sarasola, Kepa, Francis M. Tyers og Mikel L. Forcada (ritstj.): 7th SaLTMiL Workshop on Creation and Use of Basic Lexical Resources for Less-Resourced Languages, LREC 2010, pp. 53-60. Valetta, Möltu. 
+
+Textaskrárnar eru í Linux-sniði og notuð er UTF-8 stafatafla. Snið skránna er þannig að í hverri línu er eitt orð ásamt lemmu og marki. Orðmynd, lemma og mark eru aðskilin með dálkmerki (e. tab). Setningar eru aðgreindar með auðri línu. 
+
+
+---- ENGLISH -----
+
+MIM-GOLD version 21.05
+
+The folder data contains 13 files with tagged Icelandic text that has been sampled from 13 domains of texts of the 25 million word Tagged Icelandic Corpus (MIM) (http://www.malfong.is/index.php?lang=en&pg=mim).
+The texts were cleaned extensively and then run through an automatic tagging process. The tags were then semi-manually and manually corrected. Further information about the tagset that is used are found in MIM_GOLD_DESCRIPTION_EN.pdf.
+
+Veriosn 21.05 contains the same texts as MIM-GOLD 20.05 but lemmas have beed added. Some tags have as well been corrected. The texts where lemmatized with the lemmatizer Nefnir but where subsequently correted manually.
+
+The file mim.plain contains all the texts and can be used to train a tagger or a lemmatizer.
+
+When publishing results based on the texts in MIM-GOLD please refer to: 
+
+Hrafn Loftsson, Jökull H. Yngvason, Sigrún Helgadóttir and Eiríkur Rögnvaldsson. 2010. Developing a PoS-tagged corpus using existing tools. Sarasola, Kepa, Francis M. Tyers og Mikel L. Forcada (eds.): 7th SaLTMiL Workshop on Creation and Use of Basic Lexical Resources for Less-Resourced Languages, LREC 2010, pp. 53-60. Valetta, Malta. 
+
+The text files are encoded in UTF-8 and Linux format. The format of the files is one token per line, each line consists of the word, lemma and tag that are separated with a tab. Sentences are separated by empty lines. 
+
+

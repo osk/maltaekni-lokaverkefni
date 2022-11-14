@@ -1,0 +1,66 @@
+[
+  {
+    "index": "0",
+    "name": "Héraðsdóms Reykjavíkur",
+    "sentence": " [START] Héraðsdóms Reykjavíkur [END] 6. júní 2008 í máli nr. E-7823 / 2006 :",
+    "prediction": [
+      {
+        "text": {
+          "value": "Héraðsdómar Íslands",
+          "lang": "is"
+        },
+        "score": -0.0588
+      },
+      {
+        "text": {
+          "value": "Héraðsdómur Reykjavíkur",
+          "lang": "is"
+        },
+        "score": -0.6082
+      },
+      {
+        "text": {
+          "value": "Höfuðborgarsvæðið",
+          "lang": "is"
+        },
+        "score": -0.961
+      },
+      {
+        "text": {
+          "value": "Héraðsdómur",
+          "lang": "is"
+        },
+        "score": -1.0113
+      },
+      {
+        "text": {
+          "value": "Héraðsvötn",
+          "lang": "is"
+        },
+        "score": -1.0859
+      }
+    ],
+    "sentence_id": 0,
+    "section": "adjudications",
+    "correct_wiki": "",
+    "wiki_is": [],
+    "wiki_en": [],
+    "suggestion_wiki": "",
+    "unlabelled": true,
+    "matches": [
+      {
+        "label": "Organization",
+        "entity": "Héraðsdóms Reykjavíkur",
+        "lines": [
+          44,
+          45
+        ],
+        "category": "adjudications",
+        "base_info": [
+          "Héraðsdóms\tHéraðsdómur\tnkee-s",
+          "Reykjavíkur\tReykjavík\tnvee-s"
+        ]
+      }
+    ]
+  }
+]

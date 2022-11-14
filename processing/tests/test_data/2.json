@@ -1,0 +1,390 @@
+[
+  {
+    "index": "5",
+    "name": "Héraðsdóms Reykjavíkur",
+    "sentence": "Ár 2008 , föstudaginn 6. júní , er á dómþingi [START] Héraðsdóms Reykjavíkur [END] , sem háð er í Dómhúsinu við Lækjartorg af Allani Vagni Magnússyni héraðsdómara , ásamt meðdómsmönnunum Elínu Ólafsdóttur og Jóni Hjaltalín Ólafssyni læknum kveðinn upp dómur í málinu nr. E- 7823/2006",
+    "prediction": [
+      {
+        "text": {
+          "value": "Héraðsdómar Íslands",
+          "lang": "is"
+        },
+        "score": -0.0649
+      },
+      {
+        "text": {
+          "value": "Héraðsdómur Reykjavíkur",
+          "lang": "is"
+        },
+        "score": -0.4844
+      },
+      {
+        "text": {
+          "value": "Dómkirkjan í Reykjavík",
+          "lang": "is"
+        },
+        "score": -0.8702
+      },
+      {
+        "text": {
+          "value": "Héraðsdómur",
+          "lang": "is"
+        },
+        "score": -1.0729
+      },
+      {
+        "text": {
+          "value": "Héraðsvötn",
+          "lang": "is"
+        },
+        "score": -1.3397
+      }
+    ],
+    "sentence_id": 6,
+    "section": "adjudications",
+    "correct_wiki": "",
+    "wiki_is": [],
+    "wiki_en": [],
+    "suggestion_wiki": "",
+    "unlabelled": true,
+    "matches": [
+      {
+        "label": "Organization",
+        "entity": "Héraðsdóms Reykjavíkur",
+        "lines": [
+          44,
+          45
+        ],
+        "category": "adjudications",
+        "base_info": [
+          "Héraðsdóms\tHéraðsdómur\tnkee-s",
+          "Reykjavíkur\tReykjavík\tnvee-s"
+        ]
+      }
+    ]
+  },
+  {
+    "index": "6",
+    "name": "Dómhúsinu",
+    "sentence": "Ár 2008 , föstudaginn 6. júní , er á dómþingi Héraðsdóms Reykjavíkur , sem háð er í [START] Dómhúsinu [END] við Lækjartorg af Allani Vagni Magnússyni héraðsdómara , ásamt meðdómsmönnunum Elínu Ólafsdóttur og Jóni Hjaltalín Ólafssyni læknum kveðinn upp dómur í málinu nr. E- 7823/2006",
+    "prediction": [
+      {
+        "text": {
+          "value": "Héraðsdómar Íslands",
+          "lang": "is"
+        },
+        "score": -0.2884
+      },
+      {
+        "text": {
+          "value": "Héraðsdómur Reykjavíkur",
+          "lang": "is"
+        },
+        "score": -0.5378
+      },
+      {
+        "text": {
+          "value": "Lækjartorg",
+          "lang": "is"
+        },
+        "score": -0.863
+      },
+      {
+        "text": {
+          "value": "Héraðsdómur",
+          "lang": "is"
+        },
+        "score": -0.8758
+      },
+      {
+        "text": {
+          "value": "Þingvellir",
+          "lang": "is"
+        },
+        "score": -1.3281
+      }
+    ],
+    "sentence_id": 6,
+    "section": "adjudications",
+    "correct_wiki": "",
+    "wiki_is": [],
+    "wiki_en": [],
+    "suggestion_wiki": "",
+    "unlabelled": true,
+    "matches": [
+      {
+        "label": "Location",
+        "entity": "Dómhúsinu",
+        "lines": [
+          51
+        ],
+        "category": "adjudications",
+        "base_info": [
+          "Dómhúsinu\tDómhús\tnheþgs"
+        ]
+      }
+    ]
+  },
+  {
+    "index": "7",
+    "name": "Lækjartorg",
+    "sentence": "Ár 2008 , föstudaginn 6. júní , er á dómþingi Héraðsdóms Reykjavíkur , sem háð er í Dómhúsinu við [START] Lækjartorg [END] af Allani Vagni Magnússyni héraðsdómara , ásamt meðdómsmönnunum Elínu Ólafsdóttur og Jóni Hjaltalín Ólafssyni læknum kveðinn upp dómur í málinu nr. E- 7823/2006",
+    "prediction": [
+      {
+        "text": {
+          "value": "Lækjartorg",
+          "lang": "is"
+        },
+        "score": -0.0847
+      },
+      {
+        "text": {
+          "value": "Héraðsdómar Íslands",
+          "lang": "is"
+        },
+        "score": -1.1263
+      },
+      {
+        "text": {
+          "value": "Lækjartorg",
+          "lang": "en"
+        },
+        "score": -1.2319
+      },
+      {
+        "text": {
+          "value": "Héraðsdómur Reykjavíkur",
+          "lang": "is"
+        },
+        "score": -1.3994
+      },
+      {
+        "text": {
+          "value": "Héraðsdómur",
+          "lang": "is"
+        },
+        "score": -1.6509
+      }
+    ],
+    "sentence_id": 6,
+    "section": "adjudications",
+    "correct_wiki": "Lækjartorg >> is",
+    "wiki_is": [
+      "Lækjartorg"
+    ],
+    "wiki_en": [
+      "Lækjartorg"
+    ],
+    "suggestion_wiki": "",
+    "unlabelled": false,
+    "matches": [
+      {
+        "label": "Location",
+        "entity": "Lækjartorg",
+        "lines": [
+          53
+        ],
+        "category": "adjudications",
+        "base_info": [
+          "Lækjartorg\tLækjartorg\tnheo-s"
+        ]
+      }
+    ]
+  },
+  {
+    "index": "8",
+    "name": "Allani Vagni Magnússyni",
+    "sentence": "Ár 2008 , föstudaginn 6. júní , er á dómþingi Héraðsdóms Reykjavíkur , sem háð er í Dómhúsinu við Lækjartorg af [START] Allani Vagni Magnússyni [END] héraðsdómara , ásamt meðdómsmönnunum Elínu Ólafsdóttur og Jóni Hjaltalín Ólafssyni læknum kveðinn upp dómur í málinu nr. E- 7823/2006",
+    "prediction": [
+      {
+        "text": {
+          "value": "Allan Wagner",
+          "lang": "en"
+        },
+        "score": -3.0798
+      },
+      {
+        "text": {
+          "value": "Allan Wagner",
+          "lang": "de"
+        },
+        "score": -3.2798
+      },
+      {
+        "text": {
+          "value": "Allan V. Cox",
+          "lang": "en"
+        },
+        "score": -3.6
+      },
+      {
+        "text": {
+          "value": "Allan Wagner",
+          "lang": "es"
+        },
+        "score": -3.7413
+      },
+      {
+        "text": {
+          "value": "Allan Wagner",
+          "lang": "nl"
+        },
+        "score": -3.8576
+      }
+    ],
+    "sentence_id": 6,
+    "section": "adjudications",
+    "correct_wiki": "",
+    "wiki_is": [],
+    "wiki_en": [],
+    "suggestion_wiki": "",
+    "unlabelled": true,
+    "matches": [
+      {
+        "label": "Person",
+        "entity": "Allani Vagni Magnússyni",
+        "lines": [
+          55,
+          56,
+          57
+        ],
+        "category": "adjudications",
+        "base_info": [
+          "Allani\tAllan\tnkeþ-s",
+          "Vagni\tVagn\tnkeþ-s",
+          "Magnússyni\tMagnússon\tnkeþ-s"
+        ]
+      }
+    ]
+  },
+  {
+    "index": "9",
+    "name": "Elínu Ólafsdóttur",
+    "sentence": "Ár 2008 , föstudaginn 6. júní , er á dómþingi Héraðsdóms Reykjavíkur , sem háð er í Dómhúsinu við Lækjartorg af Allani Vagni Magnússyni héraðsdómara , ásamt meðdómsmönnunum [START] Elínu Ólafsdóttur [END] og Jóni Hjaltalín Ólafssyni læknum kveðinn upp dómur í málinu nr. E- 7823/2006",
+    "prediction": [
+      {
+        "text": {
+          "value": "Elína",
+          "lang": "is"
+        },
+        "score": -2.4812
+      },
+      {
+        "text": {
+          "value": "Elīna",
+          "lang": "de"
+        },
+        "score": -3.3134
+      },
+      {
+        "text": {
+          "value": "Elīna Otikova",
+          "lang": "lv"
+        },
+        "score": -3.8999
+      },
+      {
+        "text": {
+          "value": "Elínrós",
+          "lang": "is"
+        },
+        "score": -4.0609
+      },
+      {
+        "text": {
+          "value": "Elínrós Líndal",
+          "lang": "en"
+        },
+        "score": -6.2755
+      }
+    ],
+    "sentence_id": 6,
+    "section": "adjudications",
+    "correct_wiki": "",
+    "wiki_is": [],
+    "wiki_en": [],
+    "suggestion_wiki": "",
+    "unlabelled": true,
+    "matches": [
+      {
+        "label": "Person",
+        "entity": "Elínu Ólafsdóttur",
+        "lines": [
+          62,
+          63
+        ],
+        "category": "adjudications",
+        "base_info": [
+          "Elínu\tElín\tnveþ-s",
+          "Ólafsdóttur\tÓlafsdóttir\tnveþ-s"
+        ]
+      }
+    ]
+  },
+  {
+    "index": "10",
+    "name": "Jóni Hjaltalín Ólafssyni",
+    "sentence": "Ár 2008 , föstudaginn 6. júní , er á dómþingi Héraðsdóms Reykjavíkur , sem háð er í Dómhúsinu við Lækjartorg af Allani Vagni Magnússyni héraðsdómara , ásamt meðdómsmönnunum Elínu Ólafsdóttur og [START] Jóni Hjaltalín Ólafssyni [END] læknum kveðinn upp dómur í málinu nr. E- 7823/2006",
+    "prediction": [
+      {
+        "text": {
+          "value": "Jón Ólafsson (f. 1963)",
+          "lang": "is"
+        },
+        "score": -0.701
+      },
+      {
+        "text": {
+          "value": "Jón Ólafsson",
+          "lang": "is"
+        },
+        "score": -0.7872
+      },
+      {
+        "text": {
+          "value": "Jón Ólafsson",
+          "lang": "en"
+        },
+        "score": -1.2071
+      },
+      {
+        "text": {
+          "value": "Jón Ólafsson",
+          "lang": "de"
+        },
+        "score": -1.3506
+      },
+      {
+        "text": {
+          "value": "Jón Hjaltalín",
+          "lang": "sv"
+        },
+        "score": -1.4268
+      }
+    ],
+    "sentence_id": 6,
+    "section": "adjudications",
+    "correct_wiki": "",
+    "wiki_is": [],
+    "wiki_en": [],
+    "suggestion_wiki": "",
+    "unlabelled": true,
+    "matches": [
+      {
+        "label": "Person",
+        "entity": "Jóni Hjaltalín Ólafssyni",
+        "lines": [
+          65,
+          66,
+          67
+        ],
+        "category": "adjudications",
+        "base_info": [
+          "Jóni\tJón\tnkeþ-s",
+          "Hjaltalín\tHjaltalín\tnkeþ-s",
+          "Ólafssyni\tÓlafsson\tnkeþ-s"
+        ]
+      }
+    ]
+  }
+]
