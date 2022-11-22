@@ -22,6 +22,8 @@ A pair is:
   { "id": "adjudications-0", "section": "adjudications", "sentence_id": 0 }
 
 No semantic meaning in which name is in `a` or `b` if both are defined.
+
+In the generated data, `base_info`, `wiki` and `predictions` are not used.
 """
 
 import json
@@ -45,28 +47,33 @@ def generate_id(item):
 def generate_pair_entity(item):
     # if we get this something is wrong in our generated data
     if len(item["matches"]) == 0:
+        print(item)
         return None
     name = item["name"]
     index = item["index"]
     first_match = item["matches"][0]
     label = first_match["label"]
-    base_info = first_match["base_info"]
-    wiki_split = item["correct_wiki"].split(" >> ")
-    wiki = ""
-    predictions = []
+    # base_info = first_match["base_info"]
+    # wiki_split = item["correct_wiki"].split(" >> ")
+    # wiki = ""
+    # predictions = []
 
-    if len(wiki_split) == 2 and wiki_split[1] == "is":
-        wiki = wiki_split[0]
+    # if len(wiki_split) == 2 and wiki_split[1] == "is":
+    #     wiki = wiki_split[0]
 
-    predictions = list(filter(lambda i: i["text"]["lang"] == "is", item["prediction"]))
+    # predictions = list(
+    #   filter(lambda i: i["text"]["lang"] == "is", item["prediction"])
+    # )
 
     return {
         "name": name,
         "label": label,
         "index": index,
-        "base_info": base_info,
-        "wiki": wiki,
-        "predictions": predictions,
+        # Skipping these since we're not using them in the webapp and they take
+        # a lot of space
+        # "base_info": base_info,
+        # "wiki": wiki,
+        # "predictions": predictions,
     }
 
 
@@ -91,41 +98,46 @@ def generate_pairs(data):
             prime_id = id
             prime_sentence = sentence
         else:
-            if prime_id["id"] != id["id"] or prime_sentence != sentence:
-                # TODO Should raise
-                print(
-                    "items mismatch", id["id"], prime_id["id"], sentence, prime_sentence
-                )
+            if prime_id["id"] != id["id"]:
+                raise Exception("items id mismatch", id["id"], prime_id["id"])
+            # TODO fix this, troubles with cleaning the sentence
+            # if prime_sentence != sentence:
+            #     # TODO Should raise
+            #     print(
+            #         "items sentence mismatch", sentence, prime_sentence
+            #     )
 
         candidate = generate_pair_entity(item)
 
         if candidate:
             candidates.append(candidate)
         else:
-            # TODO Should raise
-            print("candidate has no matches", prime_id["id"])
+            raise Exception("candidate has no matches", candidate, prime_id["id"])
 
     pairs = []
 
-    # Generates (N*(N-1))/2 pairs or 1 if a single candidate
-    if len(candidates) == 0:
-        return []
-    elif len(candidates) > 1:
+    # Generates (N*(N-1))/2 pairs or none if a single/no candidate
+    if len(candidates) > 1:
         combinations = list(itertools.combinations(candidates, 2))
     else:
-        combinations = [candidates]
+        return None
 
     for candidate_pair in combinations:
         pairs.append(
             {
-                "sentence": prime_sentence,
-                "id": prime_id,
                 "a": candidate_pair[0],
                 "b": candidate_pair[1] if len(candidate_pair) > 1 else None,
             }
         )
 
-    return pairs
+    if len(pairs) == 0:
+        return None
+
+    return {
+        "sentence": prime_sentence,
+        "id": prime_id,
+        "pairs": pairs,
+    }
 
 
 def collect_data_and_generate_pairs(data):
@@ -134,6 +146,10 @@ def collect_data_and_generate_pairs(data):
 
     last = None
     collected = []
+    sentence_with_pair_count = 0
+    sentence_without_pair_count = 0
+    pair_count = 0
+    no_pairs_count = 0
     # TODO make more pythonic
     for item in data:
         # Key for sentence, one or more datum
@@ -146,12 +162,39 @@ def collect_data_and_generate_pairs(data):
         if last == current or last is None:
             collected.append(item)
         else:
-            pairs = pairs + generate_pairs(collected)
+            new_pair = generate_pairs(collected)
+
+            if new_pair is None:
+                no_pairs_count += 1
+                sentence_without_pair_count += 1
+            else:
+                pair_count += len(new_pair["pairs"])
+                sentence_with_pair_count += 1
+                pairs.append(new_pair)
             collected = [item]
 
         last = current
-    # Generate the last pair
-    pairs = pairs + generate_pairs(collected)
+
+    # Generate the last pair, yuck replicates code from above
+    new_pair = generate_pairs(collected)
+
+    if new_pair is None:
+        no_pairs_count += 1
+        sentence_without_pair_count += 1
+    else:
+        pair_count += len(new_pair["pairs"])
+        sentence_with_pair_count += 1
+        pairs.append(new_pair)
+
+    print(
+        "Generated",
+        pair_count,
+        "pairs from",
+        sentence_with_pair_count,
+        "sentences.",
+        sentence_without_pair_count,
+        "sentences had no pairs",
+    )
 
     return pairs
 
@@ -176,18 +219,18 @@ if __name__ == "__main__":
     save_file(pairs, "../data/output/pairs/pairs.json")
 
     # save a csv for debug/glancing data
-    csv_data = "sentence_id;a_name;a_label;b_name;b_label\n"
+    # csv_data = "sentence_id;a_name;a_label;b_name;b_label\n"
 
-    for pair in pairs:
-        id = pair["id"]["id"]
-        sentence = pair["sentence"]
-        a_name = pair["a"]["name"]
-        a_label = pair["a"]["label"]
-        b_name = pair["b"]["name"] if pair["b"] else ""
-        b_label = pair["b"]["label"] if pair["b"] else ""
-        csv_data += "{0};{1};{2};{3};{4};{5}\n".format(
-            id, a_name, a_label, b_name, b_label, sentence
-        )
+    # for pair in pairs:
+    #     id = pair["id"]["id"]
+    #     sentence = pair["sentence"]
+    #     a_name = pair["a"]["name"]
+    #     a_label = pair["a"]["label"]
+    #     b_name = pair["b"]["name"] if pair["b"] else ""
+    #     b_label = pair["b"]["label"] if pair["b"] else ""
+    #     csv_data += "{0};{1};{2};{3};{4};{5}\n".format(
+    #         id, a_name, a_label, b_name, b_label, sentence
+    #     )
 
-    with open("../data/output/pairs/pairs.csv", "w", encoding="utf-8") as output_file:
-        output_file.write(csv_data)
+    # with open("../data/output/pairs/pairs.csv", "w", encoding="utf-8") as output_file:
+    #     output_file.write(csv_data)

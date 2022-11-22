@@ -174,6 +174,12 @@ def transform_el_predicition_to_json(prediction):
     return parsed
 
 
+def fix_entry_name(name):
+    if name.endswith(".") or name.endswith("?"):
+        return name[:-1].rstrip()
+    return name
+
+
 def match_el_with_ner_all(el_files, ner_all):
     """Match the EL data with the NER data."""
     results = []
@@ -184,7 +190,16 @@ def match_el_with_ner_all(el_files, ner_all):
         el_content = restructure_el_file(el_content)
         for entry in el_content:
             # Find the NER matches
-            matches = [ner_all[item] for item in ner_all if item == entry["name"]]
+            matches = [
+                ner_all[item]
+                for item in ner_all
+                if item == entry["name"] or item == fix_entry_name(entry["name"])
+            ]
+            if len(matches) == 0:
+                # TODO figure out errors in dat
+                # (think we're at that point, i.e. no errors in code lol)
+                # raise Exception("no matches for", entry["name"], entry)
+                continue
             entry["matches"] = matches
 
             # Make unlabelled a true boolean
@@ -201,16 +216,20 @@ def dedupe_el(el_data):
     for entry in el_data:
         deduped = []
         for match in entry["matches"]:
-
-            matches = next(
-                (
-                    item
-                    for item in deduped
-                    if item["label"] == match["label"]
-                    and item["entity"] == match["entity"]
-                ),
-                None,
-            )
+            try:
+                matches = next(
+                    (
+                        item
+                        for item in deduped
+                        if item["label"] == match["label"]
+                        and item["entity"] == match["entity"]
+                    ),
+                    None,
+                )
+            except TypeError:
+                # TODO fix this
+                # print('some error with', match[0])
+                continue
 
             if not matches:
                 deduped.append(match[0])
@@ -230,7 +249,7 @@ if __name__ == "__main__":
     el_result = match_el_with_ner_all(el_files, grouped)
 
     # This is a big file, around 300MB
-    # save_file(el_result, "../data/output/mim_gold_el_with_ner_all.json")
+    save_file(el_result, "../data/output/mim_gold_el_with_ner_all.json")
 
     el_deduped = dedupe_el(el_result)
     save_file(el_result, "../data/output/mim_gold_el_with_ner_deduped.json")

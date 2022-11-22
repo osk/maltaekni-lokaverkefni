@@ -60,7 +60,7 @@ PhD thesis: [Large-Scale Semantic Relationship Extraction for Information Discov
 
 ### Data bugs
 
-* [ ] Bugs in MIM-GOLD-2_0 EL file `mbl.txt`!
+* [ ] Bugs in MIM-GOLD-2_0 NER file `mbl.txt`
   * On line 16741, `Bruce	I-Organization` should be `Bruce	B-Organization`
   * On line 16741, `Enschede	I-Organization` should be `Enschede	B-Organization`
   * On line 26827, `20	I-Time` should be `20	B-Time`
@@ -79,6 +79,15 @@ PhD thesis: [Large-Scale Semantic Relationship Extraction for Information Discov
   * On line 222465, `Jón	I-Person` should be `Jón	B-Person`
   * On line 230829, `Jón	I-Person` should be `Jón	B-Person`
   * On line 249105, `GEOFFREY	I-Person` should be `GEOFFREY	B-Person`
+* [ ] Bugs in MIM-GOLD-2_0 NER file `websites.txt`
+  * On line `5496`, `-10.	I-Date` should be `-10.	B-Date` (also -10 is sus)
 
-* [ ] Bug in `books_release_candidates.json`
+* [ ] Bugs in `books_release_candidates.json`
+  * Items `4194` and `4212` should be `Brit. Mus.` not `Brit . Mus .`
+  * Item `4890` should be `Film Aap S.A.` not `Film Aap S.A .`
+  * Item `4908` should be `Elder-Dalrymple Productions Ltd.` not `Elder-Dalrymple Productions Ltd .`
+  * Item `5283` should be `E.B. Lewis` not `E.B . Lewis`
   * Line 125236 should be `"prediction": "[[{'text': 'LÎle de l'épouvante >> fr', 'score': tensor(-1.3322)}, {'text': 'Lisola del sole >> it', 'score': tensor(-1.6885)}, {'text': 'LÎle de l'étrange >> fr', 'score': tensor(-1.7623)}, {'text': 'LÎle de la mort >> fr', 'score': tensor(-1.9195)}, {'text': 'LÎle de lOubli >> fr', 'score': tensor(-3.1787)}]]",`
+* [ ] Bugs in `mbl_release_candidates.json`
+  * Item `57` should be `Ásdís Björg Pálmadóttir` not `Ásdís Pálmadóttir` (??)
+  

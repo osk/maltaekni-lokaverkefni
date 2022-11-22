@@ -16,7 +16,7 @@ Placeholders from Wikipedia.
 
 > In information extraction, a named entity is a real-world object, such as a person, location, organization, product, etc., that can be denoted with a proper name. It can be abstract or have a physical existence. Examples of named entities include Barack Obama, New York City, Volkswagen Golf, or anything else that can be named. Named entities can simply be viewed as entity instances (e.g., New York City is an instance of a city).
 >
-> [`Named entity` on Wikipedia](https://en.wikipedia.org/wiki/Named_entity)
+> —[`Named entity` on Wikipedia](https://en.wikipedia.org/wiki/Named_entity)
 
 ### Named-entity recognition (NER)
 
@@ -28,7 +28,7 @@ Placeholders from Wikipedia.
 
 > In natural language processing, entity linking, also referred to as named-entity linking (NEL),[1] named-entity disambiguation (NED), named-entity recognition and disambiguation (NERD) or named-entity normalization (NEN) is the task of assigning a unique identity to entities (such as famous individuals, locations, or companies) mentioned in text. For example, given the sentence "Paris is the capital of France", the idea is to determine that "Paris" refers to the city of Paris and not to Paris Hilton or any other entity that could be referred to as "Paris". Entity linking is different from named-entity recognition (NER) in that NER identifies the occurrence of a named entity in text but it does not identify which specific entity it is (see Differences from other techniques).
 >
-> [`Entity linking` on Wikipedia](https://en.wikipedia.org/wiki/Entity_linking)
+> —[`Entity linking` on Wikipedia](https://en.wikipedia.org/wiki/Entity_linking)
 
 ## Entities
 
@@ -145,7 +145,7 @@ Is there a standard for how these are written? `verb` potentially followed by `p
   * `work_title`
   * `founded`
 * Education
-  * `studied_at`
+  * `studied_at` =>
   * `teached_at`
   * `graduated_with` (only `PERSON` => `DEGREE`)
 * Non-profit, charities
@@ -273,20 +273,3 @@ to Discover Relations and Patterns in Text](http://cs.iit.edu/~culotta/pubs/culo
 * `brother_in_law`
 * `grandmother`
 * `discovered`
-
-### Examples
-
-TODO examples that help me shape this thinking and can be used for "training material".
-
-TODO use mermaid [Entity Relationship Diagrams](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram).
-
-```mermaid
-erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    ORDER ||--|{ LINE-ITEM : contains
-    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
-```
-
-## Disambiguation
-
-TODO.

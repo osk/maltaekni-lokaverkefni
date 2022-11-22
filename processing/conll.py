@@ -90,8 +90,14 @@ def consolidate_conll_bio_labels(parsed):
     entity = None
     for line in parsed:
         if line is None:
+            if entity is not None:
+                entities.append(entity)
+                entity = None
             continue
         if line["marker"] == "B":
+            if entity is not None:
+                entities.append(entity)
+                entity = None
             entity = {
                 "label": line["label"],
                 "entity": line["entity"],

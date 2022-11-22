@@ -5493,7 +5493,7 @@ Skotlandi	B-Location
 7	B-Date
 .	I-Date
 
--10.	I-Date
+-10.	B-Date
 október	I-Date
 2004	I-Date
 og	O
