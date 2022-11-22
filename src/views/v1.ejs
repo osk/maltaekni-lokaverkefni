@@ -1,0 +1,48 @@
+<%- include('_header') -%>
+
+<main>
+  <% if (!error) { %>
+  <section>
+    <h2>Útgáfa 1</h2>
+    <form method="post" action="/save">
+      <p>Hver eru tengsl A og B?</p>
+      <section class="text">
+        <p><%- sentence.sentence %></p>
+      </section>
+      <p>
+        A: <mark class="b"><%= sentence.a_name %></mark>
+        <span class="label">(<%= sentence.a_label %>)</span>
+      </p>
+      <select name="relation">
+        <option></option>
+        <% for (let relation of relations) { %>
+        <option value="<%= relation.id %>"><%= relation.display %></option>
+        <% } %>
+      </select>
+      <p>eða skráðu tengsl: <input type="text" name="relation_string" /></p>
+      <p>
+        B: <mark class="b"><%= sentence.b_name %></mark>
+        <span class="label">(<%= sentence.b_label %>)</span>
+      </p>
+      <p>
+        <label><input type="checkbox" name="flagged" value="true" /> Eitthvað er skrítið</label>
+      </p>
+      <p>
+        <label
+          ><input type="checkbox" name="reversed" value="true" /> Öfug tengls, eiga við B→A, ekki A
+          → B</label
+        >
+      </p>
+      <input type="hidden" name="from" value="v1" />
+      <input type="hidden" name="entityRelationId" value="<%= sentence.entity_relation_id %>" />
+      <button>Vista</button>
+    </form>
+  </section>
+  <% } else { %>
+  <section>
+    <p>Villa í forriti 😭</p>
+  </section>
+  <% } %>
+</main>
+
+<%- include('_footer') -%>

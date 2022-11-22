@@ -1,0 +1,19 @@
+<%- include('_header') -%>
+
+<main>
+  <% if (!error) { %>
+  <section>
+    <h2>Útgáfa 1</h2>
+    <form method="post" action="/classify">
+      <p class="status"><span class="count">Flokkaðu</span> <span class="emoji">👇👇👇</span></p>
+      <input type="hidden" name="id" value="" />
+    </form>
+  </section>
+  <% } else { %>
+  <section>
+    <p>Villa í forriti 😭</p>
+  </section>
+  <% } %>
+</main>
+
+<%- include('_footer') -%>

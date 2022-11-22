@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="is">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      <% if (typeof title !== 'undefined') { %> <%- title %> — <% } %>Flokkunarverkefni Óla
+    </title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕️</text></svg>"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="scripts.js"></script>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li>
+          <% if (page === 'index') { %>
+          <strong>Flokkun</strong>
+          <% } else { %>
+          <a href="/">Flokkun</a>
+          <% } %>
+        </li>
+        <li>
+          <% if (page === 'instructions') { %>
+          <strong>Leiðbeiningar</strong>
+          <% } else { %>
+          <a href="/instructions">Leiðbeiningar</a>
+          <% } %>
+        </li>
+        <li>
+          <% if (page === 'about') { %>
+          <strong>Um</strong>
+          <% } else { %>
+          <a href="/about">Um</a>
+          <% } %>
+        </li>
+      </ul>
+      <h1>Flokkunarverkefni</h1>
+    </header>
+  </body>
+</html>

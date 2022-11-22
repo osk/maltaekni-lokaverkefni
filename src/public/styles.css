@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --space: 1rem;
+  --max-width: 40rem;
+
+  --color-background: #ddd;
+  --color-border: #ccc;
+  --color-button: #ccc;
+  --color-link: rgb(84, 84, 255);
+
+  --fonts-main: -apple-system, BlinkMacSystemFont, "Segoe UI",
+  "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+body,
+button,
+select,
+input {
+  font-family: var(--fonts-main);
+}
+
+a {
+  color: var(--color-link);
+}
+
+main,
+header,
+footer {
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+header {
+  margin-bottom: calc(var(--space) * 1);
+  padding-top: calc(var(--space) * 0.5);
+}
+
+header ul {
+  margin-bottom: calc(var(--space) * 0.5);
+
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: calc(var(--space) * 0.5);
+}
+
+footer {
+  margin-top: calc(var(--space) * 1);
+
+  border-top: 1px solid var(--color-border);
+
+  padding-top: calc(var(--space) * 0.5);
+  padding-bottom: calc(var(--space) * 0.5);
+}
+
+h1, h2, p, ul {
+  padding-left: calc(var(--space) * 1.5);
+  padding-right: calc(var(--space) * 1.5);
+}
+
+p {
+  margin-bottom: calc(var(--space) * 0.5);
+}
+
+section.text {
+  display: flex;
+  align-items : center;
+  justify-content : center;
+
+  margin: 0;
+  padding-top: calc(var(--space) * 0.5);
+  padding-bottom: calc(var(--space) * 0.5);
+  border-radius: 4px;
+
+  min-height: 120px;
+
+  font-size: 1rem;
+  line-height: 1.23;
+  word-break: break-word;
+  
+  background-color: var(--color-background);
+}
+
+section.text mark {
+  font-weight: bold;
+}
+
+.label {
+  font-size: 0.8rem;
+}
+
+@media (min-width: 600px) {
+  section p.text {
+    font-size: 1.25rem;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) * 0.5);
+
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+button {
+  display: block;
+  
+  margin-left: calc(var(--space) * 1.5);
+  margin-right: calc(var(--space) * 1.5);
+  padding: calc(var(--space) * 0.5);
+
+  width: auto;
+  min-height: 30px;
+  
+  border: 0;
+  border-radius: 4px;
+
+  background-color: var(--color-button);
+  font-size: 1rem;
+
+  cursor: pointer;
+}
+
+select {
+  margin-left: calc(var(--space) * 1.5);
+  margin-right: calc(var(--space) * 1.5);
+
+  font-size: 1.25rem;
+}
+
+@media (min-width: 600px) {
+  button {
+    font-size: 1.25rem;
+  }
+}
+
+header ul {
+  display: flex;
+  gap: calc(var(--space) * 0.5);
+  list-style: none;
+}

@@ -5,3 +5,5 @@ models/
 data/output/
 .DS_Store
 .coverage
+/node_modules
+.env
