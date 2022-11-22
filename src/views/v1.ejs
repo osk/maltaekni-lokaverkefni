@@ -3,39 +3,41 @@
 <main>
   <% if (!error) { %>
   <section>
-    <h2>Útgáfa 1</h2>
+    <h2>Hver eru tengsl A og B?</h2>
     <form method="post" action="/save">
-      <p>Hver eru tengsl A og B?</p>
       <section class="text">
         <p><%- sentence.sentence %></p>
       </section>
-      <p>
-        A: <mark class="b"><%= sentence.a_name %></mark>
+      <p class="entity">
+        <strong>A</strong>: <mark class="b"><%= sentence.a_name %></mark>
         <span class="label">(<%= sentence.a_label %>)</span>
       </p>
-      <select name="relation">
-        <option></option>
-        <% for (let relation of relations) { %>
-        <option value="<%= relation.id %>"><%= relation.display %></option>
-        <% } %>
-      </select>
-      <p>eða skráðu tengsl: <input type="text" name="relation_string" /></p>
-      <p>
-        B: <mark class="b"><%= sentence.b_name %></mark>
+
+      <div class="relations">
+        <select name="relation">
+          <option>--Veldu tengsl--</option>
+          <% for (let relation of relations) { %>
+          <option value="<%= relation.id %>"><%= relation.display %></option>
+          <% } %>
+        </select>
+        <p>eða skráðu tengsl: <input type="text" name="relation_string" /></p>
+      </div>
+
+      <p class="entity">
+        <strong>B</strong>: <mark class="b"><%= sentence.b_name %></mark>
         <span class="label">(<%= sentence.b_label %>)</span>
       </p>
-      <p>
+      <div class="options">
         <label><input type="checkbox" name="flagged" value="true" /> Eitthvað er skrítið</label>
-      </p>
-      <p>
         <label
-          ><input type="checkbox" name="reversed" value="true" /> Öfug tengls, eiga við B→A, ekki A
-          → B</label
+          ><input type="checkbox" name="reversed" value="true" /> Öfug tengls, eiga við B → A, ekki
+          A → B</label
         >
-      </p>
+      </div>
       <input type="hidden" name="from" value="v1" />
       <input type="hidden" name="entityRelationId" value="<%= sentence.entity_relation_id %>" />
       <button>Vista</button>
+      <p class="skip"><a href="/v1">Nýja setningu</a></p>
     </form>
   </section>
   <% } else { %>

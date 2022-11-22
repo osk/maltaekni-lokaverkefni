@@ -4,33 +4,21 @@ import { randomSentenceWithEntities, allPredefinedRelations, createRelation } fr
 
 export const router = express.Router();
 
+async function stats(req, res) {}
+
 async function save(req, res) {
-  console.log('req.body :>> ', req.body);
   const { entityRelationId, relation, relation_string, flagged, reversed, from } = req.body;
   const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   const creator = ip + req.headers['user-agent'];
   const creatorHash = crypto.createHash('sha256').update(creator).digest('hex');
 
-  console.log(
-    'Saving',
-    entityRelationId,
-    relation,
-    relation_string,
-    flagged,
-    reversed,
-    from,
-    creatorHash,
-  );
-
-  const result = await createRelation(
+  await createRelation(
     entityRelationId,
     creatorHash,
-    relation,
+    relation_string || relation,
     flagged === 'true',
     reversed === 'true',
   );
-
-  console.log('result :>> ', result);
 
   if (req.headers['x-fetch'] == '1') {
     // It came from client-side js fetch POST
@@ -98,14 +86,24 @@ async function renderClassificationTemplate(req, res, page, title) {
   });
 }
 
+async function instructions(req, res) {
+  const sentence = await randomSentenceWithEntities();
+  const relations = await allPredefinedRelations();
+
+  return res.render('instructions', {
+    title: 'Leiðbeiningar',
+    page: 'instructions',
+    sentence: readySentenceForDisplay(sentence),
+    relations,
+  });
+}
+
 function catchErrors(fn) {
   return (req, res, next) => fn(req, res, next).catch(next);
 }
 
 router.get('/', (req, res) => res.render('index', { title: 'Forsíða', page: 'index' }));
-router.get('/instructions', (req, res) =>
-  res.render('instructions', { title: 'Leiðbeiningar', page: 'instructions' }),
-);
+router.get('/instructions', (req, res) => catchErrors(instructions(req, res)));
 router.get('/about', (req, res) => res.render('about', { title: 'Um verkefni', page: 'about' }));
 router.get('/v1', (req, res) =>
   catchErrors(renderClassificationTemplate(req, res, 'v1', 'Útgáfa 1 af flokkunarviðmóti')),
@@ -115,3 +113,5 @@ router.get('/v2', (req, res) =>
 );
 
 router.post('/save', (req, res) => catchErrors(save(req, res)));
+
+router.get('/stats', (req, res) => catchErrors(stats(req, res)));

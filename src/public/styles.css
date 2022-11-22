@@ -1,3 +1,5 @@
+/* this css file embraces chaos */
+
 * {
   margin: 0;
   padding: 0;
@@ -76,8 +78,41 @@ h1, h2, p, ul {
   padding-right: calc(var(--space) * 1.5);
 }
 
-p {
+h2, p {
   margin-bottom: calc(var(--space) * 0.5);
+}
+
+.relations {
+  margin-left: calc(var(--space) * 1.5);
+  margin-right: calc(var(--space) * 1.5);
+  margin-bottom: calc(var(--space) * 1);
+}
+
+.relations select {
+  margin-bottom: calc(var(--space) * 0.5);
+  width: 100%;
+  font-size: 1.15rem;
+}
+
+.entity {
+  margin-bottom: calc(var(--space) * 1);
+  font-size: 1.25rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) * 0.5);
+  
+  margin-left: calc(var(--space) * 1.5);
+  margin-right: calc(var(--space) * 1.5);
+  margin-bottom: calc(var(--space) * 0.5);
+
+  font-size: 0.8rem;
+}
+
+.options label {
+
 }
 
 section.text {
@@ -86,6 +121,7 @@ section.text {
   justify-content : center;
 
   margin: 0;
+  margin-bottom: calc(var(--space) * 0.5);
   padding-top: calc(var(--space) * 0.5);
   padding-bottom: calc(var(--space) * 0.5);
   border-radius: 4px;
@@ -140,17 +176,15 @@ button {
   cursor: pointer;
 }
 
-select {
-  margin-left: calc(var(--space) * 1.5);
-  margin-right: calc(var(--space) * 1.5);
-
-  font-size: 1.25rem;
-}
-
 @media (min-width: 600px) {
   button {
     font-size: 1.25rem;
   }
+}
+
+.skip {
+  text-align: center;
+  font-size: 0.8rem;
 }
 
 header ul {

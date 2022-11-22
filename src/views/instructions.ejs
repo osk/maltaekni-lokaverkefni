@@ -2,8 +2,73 @@
 
 <main>
   <h2>Leiðbeiningar</h2>
+  <form method="post" action="/save">
+    <p>
+      Gefin er setning með tveim <em>einindum</em> (manneskja, staðsetning, fyrirtæki/stofnun eða
+      <em>annað</em>) sem eru <mark>merkt</mark>, t.d.:
+    </p>
+    <br />
 
-  <p>asdf</p>
+    <section class="text">
+      <p><%- sentence.sentence %></p>
+    </section>
+    <br />
+
+    <p>Þitt verkefni er að velja <em>tengsl</em> milli þeirra.</p>
+    <p>Mögulegt er að velja úr lista af tengslum eða skrifa inn ný tengsl:</p>
+    <br />
+
+    <p class="entity">
+      <strong>A</strong>: <mark class="b"><%= sentence.a_name %></mark>
+      <span class="label">(<%= sentence.a_label %>)</span>
+    </p>
+
+    <div class="relations">
+      <select name="relation">
+        <option>--Veldu tengsl--</option>
+        <% for (let relation of relations) { %>
+        <option value="<%= relation.id %>"><%= relation.display %></option>
+        <% } %>
+      </select>
+      <p>eða skráðu tengsl: <input type="text" name="relation_string" /></p>
+    </div>
+
+    <p class="entity">
+      <strong>B</strong>: <mark class="b"><%= sentence.b_name %></mark>
+      <span class="label">(<%= sentence.b_label %>)</span>
+    </p>
+
+    <p>
+      Það gæti verið að einhverjar setningar eða einindi séu ekki réttar. Þú getur merkt að það sé
+      eitthvað skrítið í gangi þá:
+    </p>
+
+    <div class="options">
+      <label><input type="checkbox" name="flagged" value="true" /> Eitthvað er skrítið</label>
+    </div>
+    <br />
+
+    <p>
+      Ef þú telur að tengslin séu öfug, þ.e. að tengslin eigi við frá B til A, t.d.
+      <mark>Ísland</mark> <strong>staðsett í</strong> <mark>Reykjavík</mark> getur þú merkt við það:
+    </p>
+    <div class="options">
+      <label
+        ><input type="checkbox" name="reversed" value="true" /> Öfug tengls, eiga við B → A, ekki A
+        → B</label
+      >
+    </div>
+
+    <p>
+      Þegar þú ert búinn að velja tengsl og merkt þá sem skrítið eða öfugt, getur þú smellt á
+      <strong>Vista</strong> til að staðfesta skráningu. Eða ef þú vilt fá nýja setningu getur þú
+      smellt á <strong>Nýja setningu</strong>. Veldu annað hvort núna og byrjaðu að flokka!
+    </p>
+    <input type="hidden" name="from" value="v1" />
+    <input type="hidden" name="entityRelationId" value="<%= sentence.entity_relation_id %>" />
+    <button>Vista</button>
+    <p class="skip"><a href="/v1">Nýja setningu</a></p>
+  </form>
 </main>
 
 <%- include('_footer') -%>
