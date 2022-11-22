@@ -17,7 +17,7 @@
     <header>
       <ul>
         <li>
-          <% if (page === 'index') { %>
+          <% if (page === 'v1') { %>
           <strong>Flokkun</strong>
           <% } else { %>
           <a href="/">Flokkun</a>
@@ -35,6 +35,13 @@
           <strong>Um</strong>
           <% } else { %>
           <a href="/about">Um</a>
+          <% } %>
+        </li>
+        <li>
+          <% if (page === 'stats') { %>
+          <strong>Staðan</strong>
+          <% } else { %>
+          <a href="/stats">Staðan</a>
           <% } %>
         </li>
       </ul>

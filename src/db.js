@@ -109,10 +109,15 @@ export async function createRelation(
   reversed = false,
 ) {
   let relationId;
-  if (typeof relationIdOrString === 'string') {
+
+  const parsed = Number.parseInt(relationIdOrString, 10);
+
+  if (!Number.isNaN(parsed)) {
+    relationId = parsed;
+  } else if (typeof relationIdOrString === 'string' && relationIdOrString.length > 0) {
     relationId = await createNewRelation(relationIdOrString, creator);
   } else {
-    relationId = relationIdOrString;
+    return null;
   }
 
   const q = `
@@ -133,4 +138,26 @@ export async function createRelation(
   ];
   const result = await query(q, values);
   return result;
+}
+
+export async function stats() {
+  const q = `
+  SELECT
+    reveresed,
+    r.display,
+    r.name,
+    a.name AS a_name, a.label AS a_label,
+    b.name AS b_name, b.label AS b_label
+  FROM
+    entities_relation AS er
+  LEFT JOIN
+    entity AS a ON er.a_id = a.id
+  LEFT JOIN
+    entity AS b ON er.b_id = b.id
+  LEFT JOIN
+    relation AS r on er.relation_id = r.id
+  WHERE
+    relation_type = 'MARKED' AND display <> '';`;
+  const result = await query(q);
+  return result.rows;
 }

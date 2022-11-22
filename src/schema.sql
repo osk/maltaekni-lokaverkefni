@@ -56,6 +56,9 @@ CREATE TABLE entities_relation (
   -- TODO should be a foreign key
   creator VARCHAR(128),
 
+  created TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT current_timestamp,
+  updated TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT current_timestamp,
+
   CONSTRAINT fk_entitiesrelation_relation FOREIGN KEY
     (relation_id) REFERENCES relation (id)
     ON DELETE CASCADE,
@@ -65,9 +68,6 @@ CREATE TABLE entities_relation (
   CONSTRAINT fk_entitiesrelation_b FOREIGN KEY
     (b_id) REFERENCES entity (id)
     ON DELETE CASCADE
-
-  created TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT current_timestamp,
-  updated TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT current_timestamp
 );
 
 -- TODO This should be in a separate file

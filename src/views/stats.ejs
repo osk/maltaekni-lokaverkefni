@@ -1,0 +1,21 @@
+<%- include('_header') -%>
+
+<main>
+  <p>Skráð tengsl:</p>
+  <% if (stats.length == 0) { %>
+  <p>Engin skráð tengsl.</p>
+  <% } %>
+  <ul>
+    <% for (let item of stats) { %>
+    <li>
+      <%= item.reveresed ? item.b_name : item.a_name %>
+      <span class="label">(<%= item.reveresed ? item.b_label : item.a_label %>)</span>
+      <strong><%= item.display %></strong>
+      <%= item.reveresed ? item.a_name : item.b_name %>
+      <span class="label">(<%= item.reveresed ? item.a_label : item.b_label %>)
+    </li>
+    <% } %>
+  </ul>
+</main>
+
+<%- include('_footer') -%>

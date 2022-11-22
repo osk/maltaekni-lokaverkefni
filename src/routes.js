@@ -1,10 +1,18 @@
 import crypto from 'crypto';
 import express from 'express';
-import { randomSentenceWithEntities, allPredefinedRelations, createRelation } from './db.js';
+import { randomSentenceWithEntities, allPredefinedRelations, createRelation, stats } from './db.js';
 
 export const router = express.Router();
 
-async function stats(req, res) {}
+async function statsRoute(req, res) {
+  const data = await stats();
+
+  return res.render('stats', {
+    title: 'Staða',
+    page: 'stats',
+    stats: data,
+  });
+}
 
 async function save(req, res) {
   const { entityRelationId, relation, relation_string, flagged, reversed, from } = req.body;
@@ -114,4 +122,4 @@ router.get('/v2', (req, res) =>
 
 router.post('/save', (req, res) => catchErrors(save(req, res)));
 
-router.get('/stats', (req, res) => catchErrors(stats(req, res)));
+router.get('/stats', (req, res) => catchErrors(statsRoute(req, res)));
