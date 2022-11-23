@@ -139,6 +139,10 @@ section.text mark {
   font-weight: bold;
 }
 
+mark.b {
+  background-color: #00ffff;
+}
+
 .label {
   font-size: 0.8rem;
 }
